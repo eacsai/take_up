@@ -10,3 +10,12 @@
     display: inline-block;
     height: 20px;
 }
+
+image{
+    box-sizing: border-box;
+    width: 300rpx;
+    
+}
+.image{
+    text-align: center
+}

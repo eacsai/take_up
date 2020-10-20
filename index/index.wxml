@@ -1,28 +1,29 @@
 <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
-<functional-page-navigator
-    name="loginAndGetUserInfo"
-    args="{{ args }}"
-    version="develop"
-    bind:success="loginSuccess"
-    bind:fail="loginFail"
-  >
-    <button class="login">登录小程序</button>
-</functional-page-navigator>
+<!-- <functional-page-navigator name="loginAndGetUserInfo" args="{{ args }}" version="develop" bind:success="loginSuccess"
+    bind:fail="loginFail">
+    <button class="login" type="primary">登录小程序</button>
+</functional-page-navigator> -->
+<view class="image"><image mode="widthFix" src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjtwo2i2cgj30n50po445.jpg"></image></view>
 <view class="page" data-weui-theme="{{theme}}">
     <view class="page__bd">
         <mp-form id="form" rules="{{rules}}" models="{{formData}}">
-            <mp-cell prop="qq" title="qq" ext-class="">
-                <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入qq" />
+            <mp-cell prop="number" title="学号" ext-class="">
+                <input bindinput="formInputChange" data-field="number" class="weui-input" placeholder="请输入学号" />
             </mp-cell>
             <mp-cell prop="mobile" title="手机号" ext-class=" weui-cell_vcode">
                 <input bindinput="formInputChange" data-field="mobile" class="weui-input" placeholder="请输入手机号" />
             </mp-cell>
-            <mp-cell prop="date" title="日期" ext-class="">
-                <picker data-field="date" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01"
-                    bindchange="bindDateChange">
+            <mp-cell prop="question" title="电脑问题" ext-class="">
+                <input bindinput="formInputChange" data-field="question" class="weui-input" placeholder="请输入电脑问题" />
+            </mp-cell>
+            <mp-cell prop="date" title="义诊日期" ext-class="weui-cell_vcode">
+                <picker data-field="date" mode="date" value="{{date}}" bindchange="bindDateChange">
                     <view class="weui-input">{{date}}</view>
                 </picker>
             </mp-cell>
         </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
     </view>
 </view>

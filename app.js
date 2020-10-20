@@ -2,8 +2,10 @@ const themeListeners = []
 
 App({
     onLaunch: function () {
-        console.log('App Launch')
-    },
+        wx.cloud.init({
+            env: 'takeup-0gq6i75d5ce4ba0b'
+        })
+        },
     onShow: function () {
         console.log('App Show')
     },
@@ -30,7 +32,7 @@ App({
     globalData: {
         hasLogin: false,
         theme: 'light',
-        GRID_DEMO_URL: '/example/index',
-        iconTabbar: '/example/images/icon_tabbar.png'
+        GRID_DEMO_URL: '/index/index',
+        iconTabbar: '/index/images/icon_tabbar.png'
     }
 })
